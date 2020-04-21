@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import smurfList from "./smurfList";
+import SmurfList from "./smurfList";
 import { addSmurf } from "../actions";
 import { connect } from 'react-redux';
 function App (props) {
@@ -46,7 +46,7 @@ function App (props) {
           </label>
           <button type='submit' onClick={handleSubmit}>Add</button>
         </form>
-        <smurfList/>
+        <SmurfList/>
       </div>
     );
   }
