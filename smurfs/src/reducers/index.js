@@ -21,6 +21,13 @@ const reducer = (state = initialState, action) => {
         isFetching: true,
         error: ''
     };
+    case FETCH_SUCCESS: {
+        return {
+            ...state,
+            isFetching: false,
+            error: ''
+        }
+    };
     case FETCH_FAILURE: 
     return {
        ...state,

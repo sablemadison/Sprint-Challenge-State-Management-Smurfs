@@ -3,10 +3,12 @@ import "./App.css";
 import SmurfList from "./smurfList";
 import { addSmurf } from "../actions";
 import { connect } from 'react-redux';
+import axios from 'axios';
 function App (props) {
    const [fields, setFields] = useState({
      name: '',
-     age: ''
+     age: '',
+     height: ''
    })
    const handleChange = (event) => {
      setFields({
@@ -20,9 +22,13 @@ function App (props) {
      props.addSmurf(fields);
      setFields({
        name: '',
-       age: ''
+       age: '',
+       height: ''
      })
    }
+ 
+  
+   
     return (
       <div className="App">
         <h1>SMURFS! 2.0 W/ Redux</h1>
@@ -50,6 +56,12 @@ function App (props) {
       </div>
     );
   }
-
-
+  
+  const fetchData = () => {
+    axios.get('http://localhost:3333/smurfs')
+  .then(res => {
+      console.log('res:', res)
+  }) }
+  fetchData()
 export default connect(null, {addSmurf})(App)
+
