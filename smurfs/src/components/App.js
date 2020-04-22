@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./App.css";
-import SmurfList from "./smurfList";
+import SmurfList from "./SmurfList";
 import { addSmurf } from "../actions";
 import { connect } from 'react-redux';
 import axios from 'axios';
@@ -49,6 +49,13 @@ function App (props) {
           value={fields.age}
           placeholder="age"
           ></input>
+          <input 
+          name="height"
+          onChange={handleChange}
+          type="text"
+          value={fields.height}
+          placeholder="height"
+          ></input>
           </label>
           <button type='submit' onClick={handleSubmit}>Add</button>
         </form>
@@ -65,3 +72,4 @@ function App (props) {
   fetchData()
 export default connect(null, {addSmurf})(App)
 
+console.log('red')
